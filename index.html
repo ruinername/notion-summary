@@ -1,0 +1,645 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Резюме</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="befc7b41-071a-4704-874b-eb9b36e96ebe" class="page sans"><header><h1 class="page-title">Резюме</h1></header><div class="page-body"><p id="cea43485-4670-41e8-ad26-b0ae889aef7c" class="">Волошинский Максим Евгеньевич</p><p id="a73035da-ab7e-440a-a688-e3e8133203ec" class="">
+</p><p id="cbc29a2e-a2d7-472c-80c1-7c554e85889c" class="">GitHub: <a href="https://github.com/ruinername">https://github.com/ruinername</a></p><p id="9ba5d6a5-b05b-4723-bacf-f9ac5fab3faf" class="">Написать мне: @voloshinskii (Telegram)</p><p id="d3d0a22e-3b7c-49cb-953f-648296a3d01d" class="">me@voloshinskii.ru</p><p id="dd70fbf9-7239-4a56-9027-f423b76c640d" class="">
+</p><h1 id="add52330-ef81-445f-bfda-9e57f1cec505" class="">Что умею</h1><p id="889ef726-ae35-4da4-8269-7fafab483649" class=""><strong>Если кратко</strong><div class="indented"><ul id="57022628-a7f8-49b9-b90e-b87b03a222a3" class="bulleted-list"><li><strong>Express.js + Webpack + Mongodb +  zero-code решения</strong> (например, очень понравился Airtable для реализации тула управлением пушами)</li></ul><ul id="6fc43919-a133-4eb5-a289-6946a5a4f40b" class="bulleted-list"><li><strong>TypeScript</strong></li></ul><ul id="620105da-097d-47e7-984a-b4ab0beba817" class="bulleted-list"><li><strong>React Native + react-redux + firebase (1.5 года)</strong></li></ul><ul id="524d9ada-0c7f-4011-bfc2-3ed50af9cf31" class="bulleted-list"><li><strong>CI/CD</strong></li></ul><ul id="37d7d9e1-1b8c-450a-9457-1446575a86fb" class="bulleted-list"><li><strong>Redis</strong></li></ul><ul id="10ea3377-e856-45d6-aed5-25a1a745137b" class="bulleted-list"><li><strong>UIKit</strong></li></ul><ul id="ce6a12da-e421-4d93-9156-04b49b095619" class="bulleted-list"><li><strong>Mocha + Chai</strong></li></ul><ul id="91e0a3c8-b1cd-4e09-a3cb-2130feb95cbc" class="bulleted-list"><li><strong>Amplitude </strong>— строю дэшборды для AB-тестов, фичей, могу сам подобрать ивенты, которые будут нужны</li></ul><ul id="6a3030c9-592d-4a47-b4cd-a9e3089f4c14" class="bulleted-list"><li>Работал с <strong>AWS S3</strong>, Google Cloud App Engine</li></ul><ul id="2beca33a-9864-4f12-8389-b7e219c7f8f6" class="bulleted-list"><li><strong>zero-code </strong>— могу дешево протестировать гипотезу</li></ul><ul id="864af11a-124e-4433-a75d-98beb242e1bf" class="bulleted-list"><li>Препроцессоры ❤️</li></ul><p id="f7df56cf-8382-42ac-9818-3829c8199a41" class="">
+</p><p id="f867a8e8-4504-4028-a24a-a65f6b078e0a" class="">
+</p></div></p><h2 id="67709fc2-cb5a-4c92-82f0-75b96941abe1" class="">Опыт работы</h2><p id="e700f108-a5f1-4742-9fae-140610fd7d6e" class=""><strong>05.2019 — 09.2020</strong> Full-stack Node.js developer</p><p id="2163ea48-8646-4bad-82f5-08ec48b7fd5b" class=""> <a href="https://apps.apple.com/ru/app/%D1%8D%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B4%D0%BD%D0%B5%D0%B2%D0%BD%D0%B8%D0%BA-%D0%BC%D1%8D%D1%88/id1048768805">https://apps.apple.com/ru/app/электронный-дневник-мэш/id1048768805</a></p><p id="83b2242b-7ebd-4e85-8ee9-2a427837077a" class="">
+</p><p id="eda24622-5b10-4eaa-be6f-de81d03ae8f5" class="">
+</p><p id="b941028c-6cec-4a82-ba83-f5d890425040" class=""><strong>Если подробно — список, что успел решить в Дневнике и чем особенно горжусь</strong><div class="indented"><p id="479b0bdb-17f1-424e-9741-13fadd5e15a5" class="">
+</p></div></p><p id="7a6fc65a-ac90-4aa1-bbdf-321add7f57c6" class="">Сделал веб-версию на RN Web для проекта с большим количеством внешних зависимостей. Адаптировал react-navigation под реалии веба</p><div id="d831b8ad-1ab3-4032-be03-28966f353767" class="column-list"><div id="6bd317c7-540e-4a77-a2aa-7e032150345a" style="width:50%" class="column"><figure id="1fb84500-7e5f-4bd7-ade9-d039544ddc79" class="image"><a href="%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5%201fb845007e5f4bd7ade9d039544ddc79/Untitled.png"><img style="width:528px" src="%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5%201fb845007e5f4bd7ade9d039544ddc79/Untitled.png"/></a></figure></div><div id="b6dda687-4c57-421e-8676-f6530aaa6e31" style="width:50%" class="column"><figure id="86c8a367-101a-4699-a501-be07105d817b" class="image"><a href="%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5%201fb845007e5f4bd7ade9d039544ddc79/Untitled%201.png"><img style="width:384px" src="%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5%201fb845007e5f4bd7ade9d039544ddc79/Untitled%201.png"/></a></figure></div></div><p id="c9377bb1-d3f5-40ae-9ffb-873f9fc5285b" class=""><mark class="highlight-gray">При большой ширине экрана табы меняются на Drawer. Благодаря адаптивности мы получили поддержку планшетов</mark></p><p id="a60da0d9-38b3-44c0-a952-f836f3e29983" class="">
+</p><p id="005a10de-f02c-42da-93c8-0d9bfb2576b1" class="">Написал микросервис под отправку онбординг-пушей и пушей для реактивации неактивных пользователей. Управление пушами было сделано в Airtable, также в эиртейбле можно настроить таргет пуша. Выбрали с PM интервал для пушей, включил cron-задачу, которая запускала микросервис раз в час, он брал пуши в Airtable, которые следует отправить</p><p id="4b4b0f2e-22c3-4d4b-a784-b3746961bfc4" class="">
+</p><p id="52be16e3-aedf-4cbe-8f1e-b748e847f817" class="">Делал авторизацию через код в вебе. Флоу следующий — пользователь вводит код из приложения в вебе → в приложении и в вебе появляются контрольные эмодзи → пользователь подтверждает вход в приложении → может пользоваться вебом</p><p id="e692e210-f79b-4b00-a485-b90a51701b1a" class="">
+</p><p id="ac62c563-9605-47e7-abf8-2a0f384f0e45" class="">Команда отказалась от вебсокета, реализовал логику на лонгполлах</p><div id="5016f368-8d4f-42e7-bd92-5e5b47ebf9b1" class="column-list"><div id="06a2dc21-46e5-40eb-8288-93940571c168" style="width:50%" class="column"><figure id="6d92d226-fa16-4ab2-b7cd-4f6025454e5a" class="image"><a href="%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5%201fb845007e5f4bd7ade9d039544ddc79/Untitled%202.png"><img style="width:240px" src="%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5%201fb845007e5f4bd7ade9d039544ddc79/Untitled%202.png"/></a></figure></div><div id="c6907584-55a6-4969-96a9-997dc5573914" style="width:50%" class="column"><figure id="eccaf90c-33fa-4528-b3ac-4f4fef493e4a" class="image"><a href="%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5%201fb845007e5f4bd7ade9d039544ddc79/Untitled%203.png"><img style="width:432px" src="%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5%201fb845007e5f4bd7ade9d039544ddc79/Untitled%203.png"/></a></figure></div></div><p id="bb8a4a6f-9af7-4452-96bd-b3e6843dc730" class="">
+</p><p id="0584e842-ad71-457c-8426-3211e4192e6f" class="">Настроил Github Actions для релиза изменений в приложении (code-push)</p><p id="77bbe22c-8f33-438a-8b1e-0227f0597a83" class="">
+</p><p id="d9bde03a-fcb8-4743-ba4a-9bf35a4b931c" class="">Сделал возможность прикреплять файлы с домашним заданием в период пандемии. Для хранения файлов в облаке использовал AWS S3</p><p id="e714f931-e559-4f32-bb24-79b2b6274671" class="">
+</p><h2 id="28c095a3-0940-4c97-8c23-4568e93f3706" class="">Свои проекты</h2><p id="6955c66f-e140-44fd-b563-d4df12691079" class="">
+</p><p id="869d80ef-c0b7-41a7-b44f-3593bb1cdfd9" class=""><strong>Серия приложений в App Store</strong></p><p id="86784e26-d6ff-46ed-ace9-716c2ebde032" class=""><a href="https://apps.apple.com/ru/app/private-diary-notes-emotions/id1536300029?l=en">https://apps.apple.com/ru/app/private-diary-notes-emotions/id1536300029?l=en</a></p><p id="b90666b0-c6d6-458b-ad79-a79eaf466deb" class=""><a href="https://apps.apple.com/ru/app/gicco-to-do-list-and-planner/id1534505720?l=en">https://apps.apple.com/ru/app/gicco-to-do-list-and-planner/id1534505720?l=en</a></p><p id="0cdae45d-28bb-45f0-b6b1-52bcc9dc7361" class=""><del><a href="https://apps.apple.com/ru/app/iconify-shortcuts-for-phone/id1533158996?l=en">https://apps.apple.com/ru/app/iconify-shortcuts-for-phone/id1533158996?l=en</a></del>  <strong>(не часть будущего супераппа)</strong></p><p id="c3524095-4b1e-48c3-8476-6663f2d4a0e8" class=""><strong>Когда: </strong>месяц назад </p><p id="5670d646-a228-4ea4-87a6-8b361dbbe6a1" class=""><strong>Зачем: </strong>получить навыки работы с теми библиотеками, которыми не было возможности заняться в Дневнике. <strong>react-native-iap, i18n, новая major-версия react-navigation, процесс релиза в App Store, работа с камерой устройства</strong></p><p id="d88625e4-6706-4093-b764-00c2af40f125" class="">Также надежда развить это до своего супераппа в сфере продуктивности в будущем. Общий UIKit, функционал по возможности поделен на модули, которые легко подключить в любом из приложений, а также общий бэкенд</p><p id="cb23c366-aaa3-4531-8814-b18891eea0c4" class="">
+</p><p id="c1abf2cb-5565-45ce-a74c-fd4772250d72" class="">Самая главная задача, которую я выделил для себя — помочь пользователям полюбить даже обычную рутину, даже в самом сером понедельнике найти то событие, благодаря которому можно будет произнести слова — да, этот день важен для меня</p><p id="b7a4fdc6-ebfa-44a2-bdca-157ab1b0bd71" class="">
+</p><p id="85679b80-0549-4fa4-9eaf-dee21e9c6a04" class=""><strong>FindFilm</strong></p><p id="a941d246-8f01-4494-8dbc-453fc845c304" class=""><strong>Когда: </strong>02.2019</p><p id="ecd3c0be-1321-4eb9-ba90-d0178dcf2996" class="">Первый свой более-менее серьезный проект. Тренировался в виральных фичах,Customer-driven разработке, в дальнейшем перенял решения из их UIKit.</p><p id="00c3c76c-a0e7-4516-bf7d-0317a5c42ddd" class="">Бэкенд — Express + mongodb, Фронт — React + Redux + UIKit VK</p><p id="d0237d1b-3a18-4c97-abc2-137a8941f66e" class="">Средний MAU: 60к</p><p id="eaeb18fe-cf85-42e3-acf0-7a211a14e4b6" class="">Грамотно монетизировать сервис так и не смогли </p><div id="6cd8d071-855d-4b4c-ab85-a1c11dbe312b" class="column-list"><div id="05550e92-61ea-4528-90ef-c35e69fd1ad4" style="width:50%" class="column"><figure id="3dc6c6f4-9a6e-4ecc-ab2e-e1737de0a405" class="image"><a href="%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5%201fb845007e5f4bd7ade9d039544ddc79/Untitled%204.png"><img style="width:240px" src="%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5%201fb845007e5f4bd7ade9d039544ddc79/Untitled%204.png"/></a></figure></div><div id="333dde73-dad8-4a25-9ecf-0818769f513b" style="width:50%" class="column"><figure id="b1563622-a5b0-42d0-b209-c652d549f6e8" class="image"><a href="%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5%201fb845007e5f4bd7ade9d039544ddc79/Untitled%205.png"><img style="width:192px" src="%D0%A0%D0%B5%D0%B7%D1%8E%D0%BC%D0%B5%201fb845007e5f4bd7ade9d039544ddc79/Untitled%205.png"/></a></figure></div></div><h2 id="17ebc0e1-1202-45ce-b0d2-3aab8c6e7c05" class="">О себе</h2><p id="978ad62c-2ea6-4d05-bd4d-5e5cfdd1cb6a" class="">Пришел в разработку благодаря курсам по алгоритмам в школе. Олимпиадным программированием продолжать заниматься не стал, но открыл для себя мир промышленного программирования, начал делать детские проекты на PHP (ООП), потом фокус постепенно начал переходить на js</p><p id="9545c64f-e5d9-4450-a6bf-a0fb2bc59dca" class="">Познакомился с React и Express, сделал несколько игрушечных проектов, потом сделал в команде с другом FindFilm — простенький сервис в VK, который стал полигоном для навыков девелопера, продуктовых фишек</p><p id="201a2d9c-49ce-4bab-ac0a-d28448ce862e" class="">Затем друг скинул линк на вакансию в Дневник. Решил попробовать, прошел интервью, написал тестовое, работал part-time 20 часов в неделю (во время пандемии перешел на 30)  параллельно со школой. Ушел из-за поступления в университет, а также из-за желания сильнее углубиться во фронтенд</p><p id="fa280c2a-fd4e-45de-9806-18908412626a" class="">
+</p><p id="4f29426d-cc2a-4288-bda3-8e55e0fde49a" class="">Сейчас делаю упор на самообразование — хочу получить те навыки, которые университет не в состоянии мне дать — софт скиллы, UI/UX</p><p id="59a62adf-b965-456c-a8e9-5b6640ddc285" class="">Люблю продуктовые процессы — вникаю в аналитику, хотел бы попробовать себя в кастдеве </p><p id="d532c91a-9a07-4ea5-843e-b326875d80d6" class="">Пробую себя в дизайне, по возможности участвую в dev-ивентах, которые позволяют развить в себе новые навыки. Google code-in, курсы в Tinkoff по ML/DL</p><p id="12aea3f8-856e-4cfe-978c-173e3b64adf4" class="">Часто ошибочно планирую время, нужное на решение задачи, без скрам-покера не могу. Бывают проблемы в коммуникации, верю, что full-time в офисе позволит лучше влиться в процессы и хочу перебороть это в себе</p><p id="e88aaf47-a594-42ae-ad36-01cc61748fa4" class="">Очень хотел бы заниматься поддержкой UIKit-а, участвовать в кросс-ревью</p><p id="ef98259a-54ba-4a92-92e3-8b5ece90b503" class="">
+</p><h2 id="cf7b15ce-8021-444a-979a-928eac4f3c5a" class="">Образование</h2><p id="e0eebeb2-4492-40c0-93a0-bbc0d8e0b752" class="">Английский — B1. Бегло читаю техническую литературу</p><p id="61629d46-c219-4029-81e4-f8959f08b63e" class="">Успешно окончил курс Tinkoff ML</p><p id="38ce97e5-6d9b-4e8f-9a16-d9fbe1c503d9" class="">Первый курс МИРЭА, Информационные системы и технологии. Рассматриваю full-time</p></div></article></body></html>
